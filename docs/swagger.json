@@ -1,0 +1,54 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Public API",
+        "title": "Maps API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "email": "fiber@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "basePath": "/api",
+    "paths": {
+        "/maps/route": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Maps"
+                ],
+                "summary": "Get routes between 2 points",
+                "parameters": [
+                    {
+                        "type": "number",
+                        "name": "end_lat",
+                        "in": "query"
+                    },
+                    {
+                        "type": "number",
+                        "name": "end_lng",
+                        "in": "query"
+                    },
+                    {
+                        "type": "number",
+                        "name": "start_lat",
+                        "in": "query"
+                    },
+                    {
+                        "type": "number",
+                        "name": "start_lng",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    }
+}

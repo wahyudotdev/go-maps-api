@@ -1,0 +1,35 @@
+basePath: /api
+info:
+  contact:
+    email: fiber@swagger.io
+    name: API Support
+  description: Public API
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Maps API
+  version: "1.0"
+paths:
+  /maps/route:
+    get:
+      parameters:
+      - in: query
+        name: end_lat
+        type: number
+      - in: query
+        name: end_lng
+        type: number
+      - in: query
+        name: start_lat
+        type: number
+      - in: query
+        name: start_lng
+        type: number
+      produces:
+      - application/json
+      responses: {}
+      summary: Get routes between 2 points
+      tags:
+      - Maps
+swagger: "2.0"
