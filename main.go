@@ -3,6 +3,7 @@ package main
 import (
 	swagger "github.com/arsmn/fiber-swagger/v2"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	_ "go-maps-api/docs"
 	"go-maps-api/router"
 	"log"
@@ -21,7 +22,13 @@ import (
 func main() {
 	app := fiber.New()
 	app.Get("/docs/*", swagger.HandlerDefault)
+	app.Use(Cors)
 	group := app.Group("/api")
 	router.MapsRouter(group)
 	log.Fatal(app.Listen(":" + os.Getenv("PORT")))
 }
+
+var Cors = cors.New(cors.Config{
+	AllowMethods: "GET, POST, OPTIONS, PUT, DELETE",
+	AllowOrigins: "*",
+})
